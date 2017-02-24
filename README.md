@@ -103,3 +103,20 @@ class DmozSpider(scrapy.Spider):
 ``` bash
 scrapy crawl dmoz
 ```
+
+經由下達`crawl dmoz`的指令後，spider就會前往`dmoz.org`的網站爬資料，很快就可以獲得類似如下的結果
+
+``` console
+2014-01-23 18:13:07-0400 [scrapy] INFO: Scrapy started (bot: tutorial)
+2014-01-23 18:13:07-0400 [scrapy] INFO: Optional features available: ...
+2014-01-23 18:13:07-0400 [scrapy] INFO: Overridden settings: {}
+2014-01-23 18:13:07-0400 [scrapy] INFO: Enabled extensions: ...
+2014-01-23 18:13:07-0400 [scrapy] INFO: Enabled downloader middlewares: ...
+2014-01-23 18:13:07-0400 [scrapy] INFO: Enabled spider middlewares: ...
+2014-01-23 18:13:07-0400 [scrapy] INFO: Enabled item pipelines: ...
+2014-01-23 18:13:07-0400 [dmoz] INFO: Spider opened
+2014-01-23 18:13:08-0400 [dmoz] DEBUG: Crawled (200) <GET http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/> (referer: None)
+2014-01-23 18:13:09-0400 [dmoz] DEBUG: Crawled (200) <GET http://www.dmoz.org/Computers/Programming/Languages/Python/Books/> (referer: None)
+2014-01-23 18:13:09-0400 [dmoz] INFO: Closing spider (finished)
+```
+
