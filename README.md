@@ -124,13 +124,13 @@ scrapy crawl dmoz
 但是更有趣的事情就是，它會在資料夾之中建立了兩個檔案，分別為`Books`、`Resources`，兩個檔案分別兩個不同網址所擷取到的內容。
 
 
-## spider的工作到底是什麼  
+## Spyder的主要任務  
 首先scrapy針對`start_urls`的列表依序建構出`scrapy.Request`的物件，並且將網頁取得的資料再交給`parse()`處理。  
 此外這些Request都預先安排好了，然後再一一的執行。並且`scrapy.http.Responce`物件會先經由`parse()`的方式解析後回傳給scrapy主程式進行
 
-## 擷取Items
+## 取得ITEMS
 
-#### 介紹何謂選擇器  
+#### 何謂選擇器  ?
 目前有很多種方法可以做為擷取網頁資料的語法，Scrapy允許你使用CSS或者XPath的語言來作為Scrapy的選擇器工具。如果想要知道如何使用這些語言，你可以參考以下網址。
 
 這邊有一個關於XPath的使用案例你可以參考
