@@ -120,3 +120,19 @@ scrapy crawl dmoz
 2014-01-23 18:13:09-0400 [dmoz] INFO: Closing spider (finished)
 ```
 
+請注意到行間有出現`[dmoz]`的關鍵字，這個關鍵字表示，我們的spider所獲得的回應訊息，你也可以從Log的結果看到，我們的spider是依據提供的url一一擷取資料的，當我們的網頁沒有其他需要參考的資料，尾端就會顯示` (referer: None)`的訊息這是因為我們並未提供任何後續的參照給他，因此它只會完成我們指定的那個頁面進行爬蟲。
+但是更有趣的事情就是，它會在資料夾之中建立了兩個檔案，分別為`Books`、`Resources`，兩個檔案分別兩個不同網址所擷取到的內容。
+
+
+## spider的工作到底是什麼  
+首先scrapy針對`start_urls`的列表依序建構出`scrapy.Request`的物件，並且將網頁取得的資料再交給`parse()`處理。  
+此外這些Request都預先安排好了，然後再一一的執行。並且`scrapy.http.Responce`物件會先經由`parse()`的方式解析後回傳給scrapy主程式進行
+
+## 擷取Items
+
+#### 介紹何謂選擇器  
+目前有很多種方法可以做為擷取網頁資料的語法，Scrapy允許你使用CSS或者XPath的語言來作為Scrapy的選擇器工具。如果想要知道如何使用這些語言，你可以參考以下網址。
+
+這邊有一個關於XPath的使用案例你可以參考
+
+- `/html/head/title`: 選擇名為`<title>`的元素，並且該元素存在於`<head>`之內，並且該`<head>`又存在於`<html>`之中
