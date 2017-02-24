@@ -136,3 +136,8 @@ scrapy crawl dmoz
 這邊有一個關於XPath的使用案例你可以參考
 
 - `/html/head/title`: 選擇名為`<title>`的元素，並且該元素存在於`<head>`之內，並且該`<head>`又存在於`<html>`之中
+- `/html/head/title/text()` : 工作同上，但是更進一步地去擷取`<title>`之內的文字
+- `//td` : 選擇所有名為`<td>`的元素
+- `//div[@class="mine"]` : 選擇所有`div`的元素，該元素包含一個名為`class="mine"`的屬性
+
+以上我們只有短短列出幾個較為基本的範例，讓你可以較為明瞭XPath的擷取語法的邏輯為何。實際上XPath的表達式千變萬化，嚴格說起來它是非有具有Power的選擇器。如果你想要更進階的了解XPath的工作流程，你可以前往此處研究學習[連結](http://www.w3schools.com/XPath/default.asp)
